@@ -8,9 +8,9 @@ fi
 ./env/bin/python server.py >server.log 2>&1 &
 server_pid=$!
 
-./caddy version >caddy.log
-./caddy build-info >>caddy.log
-./caddy run >>caddy.log 2>&1 &
+caddy version >caddy.log
+caddy build-info >>caddy.log
+caddy run >>caddy.log 2>&1 &
 caddy_pid=$!
 
 tcpdump -i lo -w repro.pcap tcp port 65535 >tcpdump.log 2>&1 &
